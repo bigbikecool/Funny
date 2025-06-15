@@ -1,21 +1,52 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>แสดงรูปภาพนักเรียน</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>แสดงรูปภาพนักเรียน</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      padding: 50px;
+      background-color: #f0f8ff;
+    }
+    h1 {
+      color: #333;
+    }
+    #studentImage {
+      margin-top: 20px;
+      max-width: 100%;
+      height: auto;
+      display: none;
+      border: 2px solid #ccc;
+      border-radius: 10px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #008CBA;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #005f6b;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h1>กดปุ่มเพื่อดูรูปภาพนักเรียน</h1>
-        <button id="showImageBtn">แสดงรูปภาพ</button>
+  <h1>กดปุ่มเพื่อแสดงรูปภาพนักเรียน</h1>
+  <button onclick="showImage()">แสดงรูปภาพ</button>
+  <br>
+  <img id="studentImage" src="IMG_0441.jpeg" alt="รูปภาพนักเรียน">
 
-        <div id="imageContainer" class="hidden">
-            <img src="student_image.png" alt="รูปภาพนักเรียน" id="studentImage">
-        </div>
-    </div>
-
-    <script src="script.js"></script>
+  <script>
+    function showImage() {
+      const image = document.getElementById('studentImage');
+      image.style.display = 'block';
+    }
+  </script>
 </body>
 </html>
